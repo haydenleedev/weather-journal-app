@@ -6,5 +6,18 @@ This project requires you to create an asynchronous web app that uses Web API an
 ## Instructions
 This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+## APIs and Routes
+
+* APP API Endpoint
+
+* Integrating OpenWeatherMap API
+
+* Return Endpoint Data
+
+* GET Route I: Server Side
+
+* Return Endpoint Data
+
+* GET Route II: Client Side
+
+* POST Route
