@@ -51,8 +51,7 @@ function performAction(e) {
 	.then(function(data) {
 		console.log("postData1: " + data.weather[0].description + "main: " + data.main.temp + "tody's date: " + newDate);
 		postData('/addWeather', {date:newDate, name:data.name, country:data.sys.country, humidity:data.main.humidity, wind:data.wind.speed, weather:data.weather[0].main, weather_description:data.weather[0].description, main:data.main.temp, main_temp_max: data.main.temp_max, main_temp_min: data.main.temp_min, feels_like: data.main.feels_like, feelings: feelings})
-		updateUI()
-	})
+	}).then(() => updateUI());
 }
 
 const postData = async ( url= '', data = {}) => {

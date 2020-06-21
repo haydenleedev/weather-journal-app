@@ -34,9 +34,7 @@ function listening() {
 }
 
 
-const allData = [];
-
-
+projectData = [];
 
 // POST route - add a POST route that adds incoming data to projectData
 /*
@@ -68,16 +66,14 @@ function addWeather(req,res){
       feelings: req.body.feelings
     }
 
-    allData.push(newEntry);
-    res.send(allData);
-    const test = JSON.stringify(allData);
-   console.log("addWeather2: " + test);
+    projectData.push(newEntry);
+    res.send(newEntry);
 }
 
 // GET route - Add a GET route that returns the projectData object
 app.get('/all', getData);
 
 function getData (request, response) {
-  response.send(allData);
-  console.log("allData: " + allData);
+  response.send(projectData);
+
 };
