@@ -34,7 +34,7 @@ function listening() {
 }
 
 
-projectData = [];
+
 
 // POST route - add a POST route that adds incoming data to projectData
 /*
@@ -65,9 +65,10 @@ function addWeather(req,res){
       feels_like: req.body.feels_like,
       feelings: req.body.feelings
     }
+    projectData = newEntry;
 
-    projectData.push(newEntry);
-    res.send(newEntry);
+    projectData.push(projectData);
+    res.send(projectData);
 }
 
 // GET route - Add a GET route that returns the projectData object

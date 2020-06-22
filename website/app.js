@@ -84,29 +84,29 @@ const updateUI = async () => {
 
 		console.log("allData Length: " + allData.length)
 
-		let count = allData.length - 1;
+		//let count = allData.length - 1;
 
-		document.getElementById("date").innerHTML = allData[count].date;
+		document.getElementById("date").innerHTML = allData.date;
 
-		document.getElementById("temp").innerHTML =`<div class="header">${allData[count].name}, ${allData[count].country} Weather
-		as of ${allData[count].date}</div>
+		document.getElementById("temp").innerHTML =`<div class="header">${allData.name}, ${allData.country} Weather
+		as of ${allData.date}</div>
 		
 		
-		<div class="overview">Today: ${allData[count].weather_description} currently. The high will be ${allData[count].main_temp_max}° and a low of ${allData[count].main_temp_min}°.</div>
+		<div class="overview">Today: ${allData.weather_description} currently. The high will be ${allData.main_temp_max}° and a low of ${allData.main_temp_min}°.</div>
 		
 		
-		<div class="hilite">${allData[count].main}°</div>
-		<div class="sub">${allData[count].weather}</div>
+		<div class="hilite">${allData.main}°</div>
+		<div class="sub">${allData.weather}</div>
 		
-		<div class="sub-head">${allData[count].feels_like}°</div>
+		<div class="sub-head">${allData.feels_like}°</div>
 		<div class="normal">Feels Like</div>
 		
 		<div class="table">
-		<div>High/Low</div>   <div>${allData[count].main_temp_max}°/ ${allData[count].main_temp_min}°</div>
-		<div>Humidity</div>   <div>${allData[count].humidity} %</div>
-		<div>Wind</div>      <div>${allData[count].wind}   mph</div>
+		<div>High/Low</div>   <div>${allData.main_temp_max}°/ ${allData.main_temp_min}°</div>
+		<div>Humidity</div>   <div>${allData.humidity} %</div>
+		<div>Wind</div>      <div>${allData.wind}   mph</div>
 		</div>`
-		document.getElementById("content").innerHTML = allData[count].feelings;
+		document.getElementById("content").innerHTML = allData.feelings;
 		
 
 	} catch (error) {
