@@ -26,9 +26,6 @@ const getData = async (baseURL, apiKey, zip) => {
 
 	try {
 		const newData =  await response.json();
-		console.log("newData: " + newData);
-		console.log("newData0: " + newData[0]);
-		console.log("newData1: " + newData[1]);
 		console.log("url: " + baseURL + apiKey + zip);
 		return newData;
 
@@ -49,7 +46,6 @@ function performAction(e) {
 
 	getData(baseURL, apiKey, zip)
 	.then(function(data) {
-		console.log("postData1: " + data.weather[0].description + "main: " + data.main.temp + "tody's date: " + newDate);
 		postData('/addWeather', {date:newDate, name:data.name, country:data.sys.country, humidity:data.main.humidity, wind:data.wind.speed, weather:data.weather[0].main, weather_description:data.weather[0].description, main:data.main.temp, main_temp_max: data.main.temp_max, main_temp_min: data.main.temp_min, feels_like: data.main.feels_like, feelings: feelings})
 	}).then(() => updateUI());
 }
@@ -66,7 +62,6 @@ const postData = async ( url= '', data = {}) => {
 
     try {
         const newData = await response.json();
-        console.log("postData2: " + newData);
         return newData;
     } catch (error) {
         console.log("error", error);
@@ -80,9 +75,7 @@ const updateUI = async () => {
 	try {
 		const allData = await request.json();
 
-		const updateUI = JSON.stringify(allData);
-
-		console.log("allData Length: " + allData.length)
+	//	const updateUI = JSON.stringify(allData);
 
 		//let count = allData.length - 1;
 
@@ -116,9 +109,3 @@ const updateUI = async () => {
 }
 
 
-/* 
-Inside that callback function call your async GET request with the parameters:
-1. base url
-2. user entered zip code (see input in html with id zip)
-3. personal API key
-*/
